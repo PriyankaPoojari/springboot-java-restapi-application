@@ -25,7 +25,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> 
+		<!-- <dependency> <groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-security</artifactId> 
 			</dependency> -->
 		<dependency>
 			<groupId>com.jgoodies</groupId>
@@ -87,29 +88,54 @@
 			<version>4.13</version>
 			<scope>test</scope>
 		</dependency>
-		 <dependency>
-                <groupId>io.rest-assured</groupId>
-                <artifactId>rest-assured</artifactId>
-                <version>${io-rest-assured.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <!--Added required depeendencies due to : https://github.com/rest-assured/rest-assured/issues/1168 -->
-            <dependency>
-                <groupId>io.rest-assured</groupId>
-                <artifactId>rest-assured-common</artifactId>
-                <version>${io-rest-assured.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.rest-assured</groupId>
-                <artifactId>json-path</artifactId>
-                <version>${io-rest-assured.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.rest-assured</groupId>
-                <artifactId>xml-path</artifactId>
-                <version>${io-rest-assured.version}</version>
-            </dependency>
-		
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${io-rest-assured.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!--Added required depeendencies due to : https://github.com/rest-assured/rest-assured/issues/1168 -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured-common</artifactId>
+			<version>${io-rest-assured.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-path</artifactId>
+			<version>${io-rest-assured.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>xml-path</artifactId>
+			<version>${io-rest-assured.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.11.0</version> <!-- Use latest version if possible -->
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.10.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.bytebuddy</groupId>
+			<artifactId>byte-buddy</artifactId>
+			<version>1.14.12</version> <!-- or latest -->
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.bytebuddy</groupId>
+			<artifactId>byte-buddy-agent</artifactId>
+			<version>1.14.14</version>
+			<scope>test</scope>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<plugins>

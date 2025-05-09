@@ -36,8 +36,8 @@ public class StudentController {
 	StudentService studentService;  
 	
 	//creating a get mapping that retrieves all the students detail from the database   
-	@GetMapping("/student")  
-	private List<String> getAllStudent(){  
+	@GetMapping("/student")
+	public List<String> getAllStudent(){  
 		List<String> studentsString = new ArrayList<>();
 		List<Student> students = studentService.getAllStudent();  
 		students.forEach(student -> studentsString.add(student.toString()));
@@ -46,8 +46,8 @@ public class StudentController {
 	
 		
 	//delete an existing record on the basis of unique ID 
-	@DeleteMapping("/student")  
-	private String deleteStudent(@RequestBody Student student)  {  
+	@DeleteMapping("/student")
+	public String deleteStudent(@RequestBody Student student)  {  
 		if(studentService.existById(student.getId())) {
 			studentService.delete(student.getId());  
 			return "Deleted Successfully : ID="+student.getId();
@@ -57,8 +57,8 @@ public class StudentController {
 	}  
 	
 	//creating add a new record  
-	@PostMapping("/student")  
-	private String saveStudent(@RequestBody Student student) throws IllegalAccessException, BadHttpRequest{ 
+	@PostMapping("/student")
+	public String saveStudent(@RequestBody Student student) throws IllegalAccessException, BadHttpRequest{ 
 		System.out.println("student="+student);
 		if(student.checkNull()) {
 			return "Error: Request Body has BAD_Format data";
@@ -73,8 +73,8 @@ public class StudentController {
 	}  
 	
 	//update an existing record on the basis of unique ID
-	@PutMapping("/student") 
-	private String updateStudent(@RequestBody Student newStudent)  {  
+	@PutMapping("/student")
+	public String updateStudent(@RequestBody Student newStudent)  {  
 		if(!studentService.existById(newStudent.getId())) {
 			return "Error: No ID found. ID="+newStudent.getId();
 		}

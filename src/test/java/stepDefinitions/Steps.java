@@ -98,7 +98,7 @@ public void send_a_PUT_HTTP_request_to_endpoint(String endpoint,List<String> bod
 		requestBody = requestBody.replaceFirst("@id", String.valueOf(id));
 		System.out.println("requestBody PUT="+requestBody +", endpoint="+endpoint);
 		this.response = httpRequest.body(requestBody).put(endpoint);	
-		Assert.assertTrue(response.getStatusCode() == 200);
+		Assert.assertEquals(response.getStatusCode(), 200);
 	}
 }
 
